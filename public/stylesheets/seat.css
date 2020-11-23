@@ -1,74 +1,54 @@
-@font-face {
-    font-family: myFirstFont;
-    src: url(../homepage/GothamMedium.ttf);
-  }
 *, *:before, *:after {
     box-sizing: border-box;
   }
-  
   html {
-    font-family:myFirstFont,sans-serif;
+    font-family:sans-serif;
     box-sizing:border-box;
     font-weight: 300;
     font-size:15px;
     text-rendering: optimizeLegibility;
   }
   body{
-    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)), url(../images/EbSnUE1WoAExE3k.jpg);
-    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+    margin:0;
+    padding:0;
+    height:100vh;
+    background-image: linear-gradient(rgba(0.6,0,0,0.7),rgba(0.6,0,0,0.7)),url(../images/seat.jpg);
     background-position: center;
-    height:95vh;
-    min-width:1000px;
+    background-size: cover;
   }
   .plane {
-    margin: 13px auto;
+
+    /*margin-top: 25px;*/
+    margin-bottom:0;
+    margin-right:auto;
+    margin-left:auto;
     max-width: 300px;
+    overflow:hidden;
   }
-  .logo{
-    height:100px;
-    width:auto;
+
+  .back-icon{
     float:left;
-    margin-top:20px;
+    margin:25px;
   }
-  
-  .main-nav{
+  .back-icon a{
+    text-decoration: none;
+    color:red;
+  }
+  .confirm-icon{
     float:right;
-    list-style: none;
-    margin-top: 55px;
+    margin:25px;
   }
-  .row {
-    max-width: 1140px;
-    margin: 0 auto;
+  .confirm-icon a{
+    text-decoration: none;
+    color:white;
   }
-  .main-nav li{
-    display:inline-block;
-    margin-left:40px;
-    margin-right:40px;
-  }
-  
-  .main-nav li a:link,
-  .main-nav li a:visited {
-      padding: 8px 0;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 90%;
-      border-bottom: 2px solid transparent;
-      -webkit-transition: border-bottom 0.2s;
-      transition: border-bottom 0.2s;
-  }
-  
-  .main-nav li a:hover,
-  .main-nav li a:active {
-      border-bottom: 2px solid #e62222;
-  }
-  
   .cockpit {
     height: 200px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    border-bottom: 5px solid #d8d8d8;
+    border-bottom: 5px solid white;
   }
   .cockpit:before {
     content: "";
@@ -79,13 +59,13 @@
     height: 400px;
     width: 100%;
     border-radius: 50%;
-    border-right: 5px solid #d8d8d8;
-    border-left: 5px solid #d8d8d8;
+    border-right: 5px solid  white;
+    border-left: 5px solid white;
   }
   .cockpit h1 {
     width: 50%;
     margin: 50px auto 35px auto;
-    color:#d8d8d8;
+    color :white;
   }
   
   .exit {
@@ -97,7 +77,7 @@
     font-size: 14px;
     line-height: 18px;
     padding: 0px 2px;
-    font-family: "Arial Narrow", Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: block;
     position: absolute;
     background: green;
@@ -113,8 +93,8 @@
   }
   
   .fuselage {
-    border-right: 5px solid #d8d8d8;
-    border-left: 5px solid #d8d8d8;
+    border-right: 5px solid  white;
+    border-left: 5px solid  white;
   }
   
   ol {
@@ -145,6 +125,7 @@
   }
   .seat input[type=checkbox]:checked + label {
     background: #bada55;
+    color:rgb(2, 78, 2);
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
     animation-duration: 300ms;
@@ -180,6 +161,7 @@
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
+    color:white;
   }
   .seat label:before {
     content: "";

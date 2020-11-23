@@ -1,7 +1,67 @@
   <%- include('partials/header') %>
-            <div class="intro-text-box">
-                <h1>World class Flights!<br>Classic experience awaits you!</h1>
-                <a class="btn btn-admin js--scroll-to-admin" href="#">About Us</a>
-                <a class="btn btn-ticket js--scroll-to-ticket" href="#">Contact Airlines</a>
-            </div>
+  <div id="id01" class="modal">
+
+      <form class="modal-content animate" action="" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container1">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button type="submit">Login</button>
+        </div>
+
+        <div class="container1" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+  </div>
+  <div class="intro">
+      <h1>World class Flights!<br>Classic travel experience!!</h1>
+  </div>
+  <section id="book" class="ticket-form">
+      <form action="/" method="POST">
+          <div class="book-ticket">
+            <h2 class="heading">Book a ticket</h2>
+            <input type="text" id="name" class="floatLabel" name="name" placeholder="Your Name"/>
+            <input type="text" id="email" class="floatLabel" name="email" placeholder="Your Email"/>
+              <input type="text" id="phone" class="floatLabel" name="phone" placeholder="Your Phone Number"/>
+              <div class="age-date">
+                  <input type="number" id="age" class="floatLabel" name="age" placeholder="Your Age"></input>
+                  <label for="depart" id="label">Date of Departure:</label>
+                  <input type="date" id="depart" class="floatLabel" name="depart" placeholder="Date of departure" />
+
+              </div>
+              <div class="from-to">
+                  <input name="flight_source" list="flight-source" id="from" placeholder="    Flying From">
+                  <datalist id="flight-source">
+                      <option value="Bengaluru">Bengaluru</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Mysuru">Mysuru</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Mumbai">Mumbai</option>
+                  </datalist></input>
+                  <input name="flight_dest" list="flight-dest" id="to" placeholder="    Flying To">
+                      <datalist id="flight-dest">
+                          <option value="Bengaluru">Bengaluru</option>
+                          <option value="Chennai">Chennai</option>
+                          <option value="Mysuru">Mysuru</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Mumbai">Mumbai</option>
+                  </datalist></input>
+              </div>
+
+
+          </div>
+          <div class="see-seats">
+              <button type="submit">View seats</button>
+          </div>
+        </form>
+  </section>
   <%- include('partials/footer') %>

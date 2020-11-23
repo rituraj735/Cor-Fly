@@ -1,25 +1,29 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="stylesheets/ticket_system_style.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/grid.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
-        <link rel="stylesheet" href="stylesheets/fontAwesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/d69811cbc4.js" crossorigin="anonymous"></script>
-    </head>
     <title>
         Air Ticket Booking System
     </title>
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d69811cbc4.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
     <body>
-        <header>
-            <nav>
-                <div class="row">
-                    <a href="/"><img src="images/e95aca64384ef4a99fc1818d0a92947c.png" alt="ABC Airlines" class="logo"></a>
-                    <ul class="main-nav js--main-nav">
-                        <li><a href="/bookingform">Book a ticket</a></li>
-                        <li><a href="/admin">Admin</a></li>
-                    </ul>
-                    <!--<a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>-->
-                </div>
-            </nav>
-        </header>
+        <nav id="navbar">
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+                <strong>ABC</strong>Airlines
+            </div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#book">Ticket</a></li>
+                <li><a onclick="document.getElementById('id01').style.display='block'" href="#admin">Admin</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>

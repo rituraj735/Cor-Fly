@@ -1,35 +1,33 @@
 //jshint esversion:6
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const middlewares = [bodyParser.urlencoded({extended:true}),];
 const app = express();
 const port = 3000;
-var db= require('./connection');
+var db= require('./connection.js');
 app.use(express.static(path.join(__dirname,'views')));
 app.use(express.static(path.join(__dirname,'public')));
+app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 app.get('/', (req,res)=>{
   res.render('home_page');
 });
-app.get('/bookingform', (req,res)=>{
-  res.render('bookingform');
-});
 
-app.get('/admin', (req,res)=>{
-  res.render('admin');
-});
+app.post('/', (req,res, next )=> {
 
-app.post('/', (req,res , next)=> {
-   console.log(req.body);
-
-   // var sql= `INSERT INTO FLIGHT values('SP113', 35, '12:40:35', 2, '${flying_from}', '${flying_to}', 13, '14:00:00')`;
-   // db.query(sql, (err,data)=> {
-   //   if(err)
-   //      throw err;
-   //   console.log("record inserted");
-   // });
-   // res.redirect('/');
-   next();
+  var flight_from = req.body.flight_source;
+  var flight_to = req.body.flight_dest;
+  console.log(flight_from + flight_to);
+  var sql= `INSERT INTO FLIGHT values('SP113', 35, '12:40:35', 2, '${flight_from}', '${flight_to}', 13, '14:00:00',1)`;
+  db.query(sql, (err,data)=> {
+  if(err)
+       throw err;
+   console.log("record inserted");
+    });
+   res.redirect('/');
+  next();
 });
 
 app.listen(port, ()=> {
