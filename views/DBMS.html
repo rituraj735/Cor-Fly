@@ -3,7 +3,11 @@
         Air Ticket Booking System
     </title>
     <head>
-      
+      <% if(message.length > 0) { %>
+         <div class="alert alert-danger col-sm-12">
+           <%= message %>
+         </div>
+      <% } %>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d69811cbc4.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
@@ -28,23 +32,23 @@
             </label>
         </nav>
         <div id="id01" class="modal">
-  
+
             <form class="modal-content animate" action="" method="post">
               <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
               </div>
-          
+
               <div class="container1">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
-          
+
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
-                  
+
                 <button type="submit">Login</button>
               </div>
-          
+
               <div class="container1" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
               </div>
@@ -84,14 +88,14 @@
                                 <option value="Mumbai">
                         </datalist>
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="see-seats">
                     <button type="submit">View seats</button>
                 </div>
-                   
+
         </section>
-          
+
     </body>
 </html>

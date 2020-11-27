@@ -1,7 +1,8 @@
   <%- include('partials/header') %>
+  
   <div id="id01" class="modal">
 
-      <form class="modal-content animate" action="" method="post">
+      <form class="modal-content animate loginForm" action="/login" method="POST">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
@@ -9,12 +10,12 @@
 
         <div class="container1">
           <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <input type="text" placeholder="Enter Username" name="user_name" required>
 
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required>
 
-          <button type="submit">Login</button>
+          <button type="submit" class="loginButton">Login</button>
         </div>
 
         <div class="container1" style="background-color:#f1f1f1">
@@ -26,7 +27,7 @@
       <h1>World class Flights!<br>Classic travel experience!!</h1>
   </div>
   <section id="book" class="ticket-form">
-      <form action="/" method="POST">
+      <form action="/" method="POST" class="bookingForm">
           <div class="book-ticket">
             <h2 class="heading">Book a ticket</h2>
             <input type="text" id="name" class="floatLabel" name="name" placeholder="Your Name"/>
@@ -60,7 +61,7 @@
 
           </div>
           <div class="see-seats">
-              <button type="submit">View seats</button>
+              <button type="submit" class="bookingForm">View seats</button>
           </div>
         </form>
   </section>

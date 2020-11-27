@@ -6,6 +6,9 @@ const middlewares = [bodyParser.urlencoded({extended:true}),];
 const app = express();
 const port = 3000;
 var db= require('./connection.js');
+var user = require('./user.js');
+var session = require('express-session');
+app.use(session({secret:'add cat', resave:false, saveUninitialized: true, cookie:{maxAge: 60000}}));
 app.use(express.static(path.join(__dirname,'views')));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended: true}));
@@ -28,6 +31,26 @@ app.post('/', (req,res, next )=> {
     });
    res.redirect('/');
   next();
+});
+
+app.post('/login', user.login);
+
+app.post('/register_flight', (req,res, next)=> {
+  var flight_from = req.body.source;
+  var flight_to = req.body.dest;
+  var flight_no = req.body.flight_no;
+  var dept = req.body.dept;
+  var arrival = req.body.arrival;
+  var foodOpt = req.body.food;
+  var seats = req.body.seats;
+  var sql = `INSERT INTO FLIGHT VALUES('${flight_no}', ${seats}, '${dept}',${foodOpt},'${flight_to}','${flight_from}', 15, '${arrival}',NULL)`;
+  db.query(sql , (err,data)=>{
+    if(err)
+       throw err;
+    console.log("record inserted");
+  res.render('flight_reg');
+    next();
+  }) ;
 });
 
 app.listen(port, ()=> {

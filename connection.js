@@ -1,6 +1,7 @@
 //jshint esversion: 6
 var mysql = require('mysql');
 
+
 var conn = mysql.createConnection({
   host: "bc4wleyqxkeakwel6nqm-mysql.services.clever-cloud.com",
   user: "ukwedoierr9smgmi",
