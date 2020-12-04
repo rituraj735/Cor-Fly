@@ -1,54 +1,74 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../homepage/GothamMedium.ttf);
+  }
 *, *:before, *:after {
     box-sizing: border-box;
   }
+
   html {
-    font-family:sans-serif;
+    font-family:myFirstFont,sans-serif;
     box-sizing:border-box;
     font-weight: 300;
     font-size:15px;
     text-rendering: optimizeLegibility;
   }
   body{
-    font-family: 'Quicksand', sans-serif;
-    margin:0;
-    padding:0;
-    height:100vh;
-    background-image: linear-gradient(rgba(0.6,0,0,0.7),rgba(0.6,0,0,0.7)),url(../images/seat.jpg);
-    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)), url(../images/EbSnUE1WoAExE3k.jpg);
     background-size: cover;
+    background-position: center;
+    height:95vh;
+    min-width:1000px;
   }
   .plane {
-
-    /*margin-top: 25px;*/
-    margin-bottom:0;
-    margin-right:auto;
-    margin-left:auto;
+    margin: 13px auto;
     max-width: 300px;
-    overflow:hidden;
+  }
+  .logo{
+    height:100px;
+    width:auto;
+    float:left;
+    margin-top:20px;
   }
 
-  .back-icon{
-    float:left;
-    margin:25px;
-  }
-  .back-icon a{
-    text-decoration: none;
-    color:red;
-  }
-  .confirm-icon{
+  .main-nav{
     float:right;
-    margin:25px;
+    list-style: none;
+    margin-top: 55px;
   }
-  .confirm-icon a{
-    text-decoration: none;
-    color:white;
+  .row {
+    max-width: 1140px;
+    margin: 0 auto;
   }
+  .main-nav li{
+    display:inline-block;
+    margin-left:40px;
+    margin-right:40px;
+  }
+
+  .main-nav li a:link,
+  .main-nav li a:visited {
+      padding: 8px 0;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 90%;
+      border-bottom: 2px solid transparent;
+      -webkit-transition: border-bottom 0.2s;
+      transition: border-bottom 0.2s;
+  }
+
+  .main-nav li a:hover,
+  .main-nav li a:active {
+      border-bottom: 2px solid #e62222;
+  }
+
   .cockpit {
     height: 200px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    border-bottom: 5px solid white;
+    border-bottom: 5px solid #d8d8d8;
   }
   .cockpit:before {
     content: "";
@@ -59,15 +79,15 @@
     height: 400px;
     width: 100%;
     border-radius: 50%;
-    border-right: 5px solid  white;
-    border-left: 5px solid white;
+    border-right: 5px solid #d8d8d8;
+    border-left: 5px solid #d8d8d8;
   }
   .cockpit h1 {
     width: 50%;
     margin: 50px auto 35px auto;
-    color :white;
+    color:#d8d8d8;
   }
-  
+
   .exit {
     position: relative;
     height: 50px;
@@ -77,7 +97,7 @@
     font-size: 14px;
     line-height: 18px;
     padding: 0px 2px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     display: block;
     position: absolute;
     background: green;
@@ -91,33 +111,33 @@
   .exit:after {
     right: 0;
   }
-  
+
   .fuselage {
-    border-right: 5px solid  white;
-    border-left: 5px solid  white;
+    border-right: 5px solid #d8d8d8;
+    border-left: 5px solid #d8d8d8;
   }
-  
+
   ol {
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
   }
-  
+
   .seats {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
-  
+
   .seat {
     display: flex;
     flex: 0 0 14.28571428571429%;
     padding: 5px;
     position: relative;
   }
-  .seat:nth-child(3) {
-    margin-right: 14.28571428571429%;
+  .seat:nth-child(2) {
+    margin-right: 32.28571428571429%;
   }
   .seat input[type=checkbox] {
     position: absolute;
@@ -125,7 +145,6 @@
   }
   .seat input[type=checkbox]:checked + label {
     background: #bada55;
-    color:rgb(2, 78, 2);
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
     animation-duration: 300ms;
@@ -161,7 +180,6 @@
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
-    color:white;
   }
   .seat label:before {
     content: "";
@@ -178,7 +196,7 @@
     cursor: pointer;
     box-shadow: 0 0 0px 2px #5C6AFF;
   }
-  
+
   @-webkit-keyframes rubberBand {
     0% {
       -webkit-transform: scale3d(1, 1, 1);
@@ -243,4 +261,3 @@
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
   }
-  

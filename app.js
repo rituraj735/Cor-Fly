@@ -8,6 +8,7 @@ const port = 3000;
 var db= require('./connection.js');
 var user = require('./user.js');
 var flight = require('./flight.js');
+var ticket_form= require('./ticket_form.js');
 var session = require('express-session');
 app.use(session({secret:'add cat', resave:false, saveUninitialized: true, cookie:{maxAge: 60000}}));
 app.use(express.static(path.join(__dirname,'views')));
@@ -19,24 +20,24 @@ app.get('/', (req,res)=>{
   res.render('home_page');
 });
 
-app.post('/', (req,res, next )=> {
-
-  var flight_from = req.body.flight_source;
-  var flight_to = req.body.flight_dest;
-  console.log(flight_from + flight_to);
-  var sql= `INSERT INTO FLIGHT values('SP113', 35, '12:40:35', 2, '${flight_from}', '${flight_to}', 13, '14:00:00',1)`;
-  db.query(sql, (err,data)=> {
-  if(err)
-       throw err;
-   console.log("record inserted");
-    });
-   res.redirect('/');
-  next();
-});
+app.post('/', ticket_form.ticket);
 
 app.post('/login', user.login);
 
 app.post('/register_flight', flight.flight);
+
+app.post('/seats', (req, res)=> {
+  console.log(req.body.seat);
+  var seat = req.body.seat;
+  var flight = req.body.flight;
+  var sql3 = `UPDATE SEAT SET Status1=1 WHERE Seat_Number='${seat}' AND Flight_NUmber='${flight}'`;
+  db.query(sql3, (err,data)=> {
+  if(err)
+     throw err;
+    console.log("record inserted");
+     });
+     res.redirect('home_page');
+});
 
 app.listen(port, ()=> {
   console.log(`Example app listening at ${port}`);
