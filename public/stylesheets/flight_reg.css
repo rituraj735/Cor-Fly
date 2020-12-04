@@ -38,3 +38,278 @@ input[type=submit], input[type=reset] {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
 }
+
+/* nav styling */
+nav{
+    position:fixed;
+    z-index:10;
+    left:0;
+    right:0;
+    top:0;
+    height:100px;
+    padding:0 5%;
+    background-color: #051e6b;
+}
+
+nav .logo{
+    float:left;
+    width:40%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    font-size: 24px;
+    color: aliceblue;
+}
+nav .logo img{
+    height:100px;
+    width:auto;
+}
+nav .links{
+    float:right;
+    padding:0;
+    margin:0;
+    width:60%;
+    height:100%;
+    color:white;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .links li{
+    list-style-type: none;
+}
+nav .links a{
+    text-decoration: none;
+    color:white;
+    display:block;
+    padding:1em;
+    /*background-color: rgba(0,0,0,0.1);*/
+    font-size:16px;
+    font-weight: bold;
+}
+
+nav .links a:hover{
+  border-bottom:2px solid red;
+}
+#nav-toggle{
+    position: absolute;
+    top:-100px;
+}
+nav .icon-burger{
+    display:none;
+    position: absolute;
+    right:5%;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+nav .icon-burger .line{
+    width:30px;
+    height:5px;
+    background-color: #fff;
+    margin:5px;
+    border-radius:3px;
+}
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: red;
+    font-family: 'Quicksand', sans-serif;
+    color:white;
+}
+label{
+    color:#051e6b;
+}
+button{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #051e6b;
+    color:white;
+    padding: 10px 18px;
+    width:auto;
+    border: none;
+}
+input::placeholder{
+  font-family: 'Quicksand', sans-serif;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container1 {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+.intro img{
+  height:100vh;
+  width:100%;
+}
+.container h1{
+  color:#051e6b;
+}
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 30px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  .modal-content img{
+      height:100px;
+      width:100px;
+  }
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+
+  @keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+@media screen and (max-width: 768px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .intro h1{
+      font-size:15px;
+    }
+
+}
+@media screen and (max-width:768px){
+    nav .logo{
+        float:none;
+        width:auto;
+        justify-content: center;
+    }
+    nav .links{
+        float:none;
+        position:fixed;
+        z-index:9;
+        background-color: rgba(0,0,0,0.8);
+        left:0;
+        right:0;
+        top:100px;
+        bottom:100%;
+        width:auto;
+        height:auto;
+        justify-content: space-evenly;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.5% ease-in-out;
+    }
+    nav .links a{
+        font-size: 20px;
+    }
+    nav :checked ~ .links{
+        bottom:0;
+    }
+    nav .icon-burger{
+        display:block;
+    }
+    nav :checked ~ .icon-burger .line:nth-child(1){
+        transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(3){
+        transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(2){
+        opacity:0;
+    }
+    .intro{
+      text-align:center;
+    }
+    .intro h1{
+      width:50%;
+      text-align:center;
+      font-size:35px;
+    }
+    .book-ticket{
+      margin:0;
+      padding:4em 1em 0em 1em;
+      font-size:  25px;
+    }
+    .book-ticket input::placeholder{
+      font-size: 15px;
+      font-weight: bolder;
+      color:#051e6b;
+      margin-left:10px;
+    }
+    #age{
+      float: none;
+      width:100%;
+    }
+    #depart{
+      float:none;
+      width:100%;
+    }
+
+    #from{
+      float: none;
+      width:100%;
+    }
+    #to{
+      float:none;
+      width:100%;
+    }
+    .see-seats{
+      margin-top:0;
+      padding-left:33%;
+    }
+    #label{
+      float: none;
+      font-size: 0.8rem;
+      font-weight: bolder;
+    }
+}

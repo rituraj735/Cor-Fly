@@ -8,6 +8,9 @@ exports.ticket= (req,res, next )=> {
  var dept = req.body.depart;
  var flight_from = req.body.flight_source;
  var flight_to = req.body.flight_dest;
+ var temp = req.body.temp;
+ var travel = req.body.travel;
+ var covid = req.body.corona;
  function makeid(length) {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -38,7 +41,7 @@ var pnr = makeid(5);
      console.log("record inserted");
       });
 
-   var sql= `INSERT INTO PERSON (Name1,age,Mail,Phone, PNR) values('${name}', ${age}, '${email}', ${phone},'${pnr}')`;
+   var sql= `INSERT INTO PERSON (Name1,age,Mail,Phone, PNR, Temperature, Travel_History,Corona_ve_report ) values('${name}', ${age}, '${email}', ${phone},'${pnr}',${temp},'${travel}','${covid}')`;
    db.query(sql, (err,data)=> {
    if(err)
       throw err;
@@ -54,7 +57,7 @@ var pnr = makeid(5);
  //    });
 
    console.log(flight_no);}
-   res.render('seat', {'flight': result[0].Flight_Number });
+   res.render('seat', {'flight': result[0].Flight_Number, 'pnr': pnr });
     });
    // console.log(flight_no.name);
 

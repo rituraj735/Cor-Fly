@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const middlewares = [bodyParser.urlencoded({extended:true}),];
 const app = express();
-const port = 3000;
+const port = process.env.PORT||3000;
 var db= require('./connection.js');
 var user = require('./user.js');
 var flight = require('./flight.js');
@@ -29,6 +29,7 @@ app.post('/register_flight', flight.flight);
 app.post('/seats', (req, res)=> {
   console.log(req.body.seat);
   var seat = req.body.seat;
+  var pnr= req.body.pnr;
   var flight = req.body.flight;
   var sql3 = `UPDATE SEAT SET Status1=1 WHERE Seat_Number='${seat}' AND Flight_NUmber='${flight}'`;
   db.query(sql3, (err,data)=> {
@@ -36,7 +37,13 @@ app.post('/seats', (req, res)=> {
      throw err;
     console.log("record inserted");
      });
-     res.redirect('home_page');
+     var sql4 = `UPDATE TICKET SET Seat_Number=${seat} WHERE PNR='${pnr}'`;
+     db.query(sql4, (err,data)=> {
+     if(err)
+        throw err;
+       console.log("record inserted");
+        });
+     res.render('home_page');
 });
 
 app.listen(port, ()=> {

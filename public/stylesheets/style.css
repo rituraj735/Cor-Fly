@@ -59,6 +59,12 @@ input[type=text], input[type=password] {
   width:30%;
 }
 
+#temp{
+
+    float: left;
+    width:30%;
+
+}
 #depart{
   float:right;
   width:50%;
@@ -356,6 +362,12 @@ span.psw {
     #age{
       float: none;
       width:100%;
+    }
+    #temp{
+
+        float: left;
+        width:30%;
+
     }
     #depart{
       float:none;

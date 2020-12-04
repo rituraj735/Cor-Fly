@@ -8,6 +8,24 @@
 </head>
 
 <body>
+	<nav id="navbar">
+			<input id="nav-toggle" type="checkbox">
+			<div class="logo">
+					<img src="images/logo.png" alt="">
+					<strong>ABC</strong>Airlines
+			</div>
+			<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#book">Ticket</a></li>
+					<li><a onclick="document.getElementById('id01').style.display='block'" href="#admin">Admin</a></li>
+			</ul>
+			<label for="nav-toggle" class="icon-burger">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+			</label>
+	</nav>
 	<div class="input">
 		<form action="/register_flight" method="POST">
 			<label for="Source">Source:</label><br>
