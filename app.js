@@ -60,8 +60,9 @@ app.post('/cancel', (req,res) => {
   db.query(sql3, (err,data)=> {
   if(err)
      throw err;
-    console.log("record inserted");
+    console.log("record deleted");
      });
+   res.render("home_page");
 });
 
 app.listen(port, ()=> {
