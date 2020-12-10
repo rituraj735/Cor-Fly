@@ -33,7 +33,34 @@
   <div class="exit exit--front fuselage">
 
   </div>
-  <form class="" action="/seats" method="POST">
+  <form class="" action="/seats" method="POST" >
+    <!-- <div id="id01" class="modal ">
+       <div class="modal-content animate">
+         <div class="imgcontainer">
+           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+           <img src="" alt="Avatar" class="avatar">
+           <h2 class="headline">FLIGHT RESERVATION TICKET</h2>
+         </div>
+
+         <div class="container1">
+           <h4 id="name">Name:      ABCD</h4>
+           <h4 id="phone">Phone number:     9999999999</h4>
+           <h4 id="from">From:      Mysuru</h4>
+           <h4 id="to">To:      Bengaluru</h4>
+           <h4 id="date">Date:      2-12-2020</h4>
+           <h4 id="seat-no">Seat Number(s):      1,2</h4>
+           <h4 id="health">Covid-19 status:    Negative</h4>
+           <h4 id="confirm">Payment and booking status:      Confirmed</h4>
+
+         </div>
+         <div class="container1" id="id03" style="background-color:#f1f1f1">
+           <button type="button" id="generate" >Print</button>
+           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel Ticket</button>
+         </div>
+       </div>
+
+
+    </div> -->
     <ol class="cabin fuselage">
       <li class="row row--1">
         <ol class="seats" type="A">
@@ -42,7 +69,7 @@
             <label for="1A">1A</label>
           </li>
           <li class="seat">
-            <input name="seat" value="2" type="checkbox" id="1B" />
+            <input name="seat" value="2" type="checkbox" disabled id="1B" />
             <label for="1B">1B</label>
           </li>
           <li class="seat">
@@ -63,7 +90,7 @@
             <label for="2A">2A</label>
           </li>
           <li class="seat">
-            <input name="seat" value="6" type="checkbox" id="2B" />
+            <input name="seat" value="6" type="checkbox" disabled id="2B" />
             <label for="2B">2B</label>
           </li>
           <li class="seat">
@@ -89,7 +116,7 @@
             <label for="3B">3B</label>
           </li>
           <li class="seat">
-            <input name="seat" value="11" type="checkbox" id="3C" />
+            <input name="seat" value="11" type="checkbox" id="3C" style="color:green;"/>
             <label for="3C">3C</label>
           </li>
           <li class="seat">
@@ -147,6 +174,12 @@
     </ol>
     <input type="text" value="<%= flight %>" name="flight"/>
     <input type="hidden" value="<%= pnr %>" name="pnr"/>
+    <input type="hidden" value="<%= name %>" name="name"/>
+    <input type="hidden" value="<%= phone %>" name="phone"/>
+    <input type="hidden" value="<%= from %>" name="from"/>
+    <input type="hidden" value="<%= to %>" name="to"/>
+    <input type="hidden" value="<%= date %>" name="date"/>
+    <input type="hidden" value="<%= health %>" name="health"/>          
     <button type="submit" name="submit">Submit</button>
   </form>
 
@@ -154,6 +187,7 @@
 
   </div>
 </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
  <script src="./seat.js" charset="utf-8"></script>
 

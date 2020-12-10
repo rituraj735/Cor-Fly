@@ -57,7 +57,7 @@ var pnr = makeid(5);
  //    });
 
    console.log(flight_no);}
-   res.render('seat', {'flight': result[0].Flight_Number, 'pnr': pnr });
+   res.render('seat', {'flight': result[0].Flight_Number, 'pnr': pnr,'name': name, 'phone': phone, 'from': flight_from,'to':flight_to,'date':dept,'health':covid});
     });
    // console.log(flight_no.name);
 

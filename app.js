@@ -31,6 +31,12 @@ app.post('/seats', (req, res)=> {
   var seat = req.body.seat;
   var pnr= req.body.pnr;
   var flight = req.body.flight;
+  var name = req.body.name;
+  var phone = req.body.phone;
+  var from = req.body.from;
+  var to = req.body.to;
+  var date= req.body.date;
+  var health = req.body.health;
   var sql3 = `UPDATE SEAT SET Status1=1 WHERE Seat_Number='${seat}' AND Flight_NUmber='${flight}'`;
   db.query(sql3, (err,data)=> {
   if(err)
@@ -43,7 +49,19 @@ app.post('/seats', (req, res)=> {
         throw err;
        console.log("record inserted");
         });
-     res.render('home_page');
+     res.render('ticket_page',{'flight':flight, 'name': name, 'seat':seat, 'pnr':pnr, 'phone':phone, 'from':from, 'to':to,'date':date, 'health':health});
+});
+
+app.post('/cancel', (req,res) => {
+  console.log('cancel clicked');
+  var pnr= req.body.pnr;
+  console.log(pnr);
+  var sql3 = `DELETE FROM TICKET WHERE PNR='${pnr}'`;
+  db.query(sql3, (err,data)=> {
+  if(err)
+     throw err;
+    console.log("record inserted");
+     });
 });
 
 app.listen(port, ()=> {

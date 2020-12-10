@@ -14,7 +14,7 @@
     text-rendering: optimizeLegibility;
   }
   body{
-    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)), url(../images/EbSnUE1WoAExE3k.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)), url(../images/alev-takil-TuFsbn5gedo-unsplash.jpg);
     background-size: cover;
     background-position: center;
     height:95vh;
@@ -261,3 +261,81 @@
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
   }
+
+ /* additions  */
+ .modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 11; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100vh; /* Full height */ /* Enable scroll if needed */
+   overflow:hidden;
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   padding-top: 0px;
+ }
+
+ /* Modal Content/Box */
+ .modal-content {
+   background-color: #fefefe;
+   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+   border: 1px solid #888;
+
+   width: 50%; /* Could be more or less, depending on screen size */
+ }
+ .modal-content img{
+     height:100px;
+     width:100px;
+ }
+
+ .imgcontainer {
+     text-align: center;
+     margin: 0px 0px 12px 0px;
+     position: relative;
+     display: flex;
+   }
+
+   .headline{
+     padding-top:10px;
+     color:#051e6b;
+   }
+
+   .container1 {
+       padding: 0px 16px 16px 16px;
+   }
+
+   .close {
+     position: absolute;
+     right: 25px;
+     top: 0;
+     color: #000;
+     font-size: 35px;
+     font-weight: bold;
+   }
+
+   .close:hover,
+   .close:focus {
+     color: red;
+     cursor: pointer;
+   }
+
+   img.avatar {
+     width: 40%;
+     border-radius: 50%;
+   }
+   .animate {
+     -webkit-animation: animatezoom 0.6s;
+     animation: animatezoom 0.6s
+   }
+
+   @-webkit-keyframes animatezoom {
+     from {-webkit-transform: scale(0)}
+     to {-webkit-transform: scale(1)}
+   }
+
+   @keyframes animatezoom {
+     from {transform: scale(0)}
+     to {transform: scale(1)}
+   }
