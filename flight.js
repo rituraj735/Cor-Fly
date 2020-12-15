@@ -19,8 +19,10 @@ exports.flight= function(req,res, next) {
     	  db.query(sql, function (err, result) {
         if (err) throw err;
         console.log(i+" record inserted");
+
       });
       }
+  
   res.render('flight_reg');
     next();
   }) ;

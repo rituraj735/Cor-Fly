@@ -49,6 +49,7 @@ app.post('/seats', (req, res)=> {
         throw err;
        console.log("record inserted");
         });
+
      res.render('ticket_page',{'flight':flight, 'name': name, 'seat':seat, 'pnr':pnr, 'phone':phone, 'from':from, 'to':to,'date':date, 'health':health});
 });
 
@@ -62,6 +63,7 @@ app.post('/cancel', (req,res) => {
      throw err;
     console.log("record deleted");
      });
+
    res.render("home_page");
 });
 

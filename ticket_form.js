@@ -39,14 +39,16 @@ var pnr = makeid(5);
    if(err)
       throw err;
      console.log("record inserted");
+     var sql= `INSERT INTO PERSON (Name1,age,Mail,Phone, PNR, Temperature, Travel_History,Corona_ve_report ) values('${name}', ${age}, '${email}', ${phone},'${pnr}',${temp},'${travel}','${covid}')`;
+     db.query(sql, (err,data)=> {
+     if(err)
+        throw err;
+       console.log("record inserted");
+      
+        });
       });
 
-   var sql= `INSERT INTO PERSON (Name1,age,Mail,Phone, PNR, Temperature, Travel_History,Corona_ve_report ) values('${name}', ${age}, '${email}', ${phone},'${pnr}',${temp},'${travel}','${covid}')`;
-   db.query(sql, (err,data)=> {
-   if(err)
-      throw err;
-     console.log("record inserted");
-      });
+
 
 
  // var sql3 = `INSERT INTO SEAT (Flight_NUmber) values('${flight_no.name}')`;
