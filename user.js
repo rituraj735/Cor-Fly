@@ -14,7 +14,7 @@ exports.login= function(req, res){
         req.session.userId = results[0].id;
         req.session.user = results[0];
         console.log(results[0].id);
-        db.release();
+      
         res.render('flight_reg');
       }
       else{
