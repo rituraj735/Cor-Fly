@@ -24,10 +24,11 @@
       <h4 id="seat-no">Seat Number(s): <%=seat %></h4>
       <h4 id="health">Covid-19 status:   <%=health%></h4>
       <h4 id="confirm">Payment and booking status:      Confirmed</h4>
-      <button  onclick="generatePDF()">Print</button>
-      <button type="submit" id="cancelbtn">Cancel Ticket</button>
+
+      <button type="submit" >Cancel Ticket</button>
     </div>
    </form>
+   <button  onclick="generatePDF()" id="cancelbtn">Print</button>
    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
    <script
  		src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"
@@ -36,7 +37,7 @@
  	</script>
 
     <script>
-
+      function generatePDF(){
   		const pdf = new jsPDF();
       pdf.setProperties({
       title: 'Reservation ticket',
@@ -64,7 +65,8 @@
       var PNR="12345";
       pdfcontent.push(intro,whitespace,whitespace,name,whitespace,phone,whitespace,from,whitespace,to,whitespace,flight,whitespace,date,whitespace,
       pnr,whitespace,seat_no,whitespace,health,whitespace,confirm,whitespace,whitespace,thanks,whitespace,whitespace,whitespace,courtesy);
-  		button.addEventListener('click', printPDF);
+      var button_1= document.getElementById("cancelbtn");
+  		button_1.addEventListener('click', printPDF);
   		function printPDF() {
   			pdf.text(10, 10, pdfcontent);
   			pdf.save(PNR+".pdf");
@@ -75,8 +77,9 @@
               modal.style.display = "none";
           }
       }
+    }
   	</script>
 
   </body>
-  <script src="cancel.js" charset="utf-8"></script>
+  <!-- <script src="cancel.js" charset="utf-8"></script> -->
 </html>
